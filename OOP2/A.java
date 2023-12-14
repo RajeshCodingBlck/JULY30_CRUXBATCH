@@ -3,8 +3,11 @@ package OOP2;
 public class A {
     
 	
-	private  String email;
-	 private String password;
+	  String email;
+	  String password;
+	 
+	 static int count;
+	 
 	
 	A(String email, String password){
 		
@@ -27,6 +30,20 @@ public class A {
 		
 		return this.email;
 	}
+	
+	public static void fun1() {};
+	
+	public  void fun2() {};
+	public static void get() {
+		
+		
+		fun1();
+		fun2();
+		
+		count=count+1;
+		
+	}
+	
 	
 	
 	
