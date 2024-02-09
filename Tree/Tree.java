@@ -7,7 +7,7 @@ public class Tree {
 	  public TreeNode root;
 	  
 	  Scanner s= new Scanner(System.in);
-	  Tree(){
+	  public Tree(){
 		   
 		root= buildTree();
 	  }
