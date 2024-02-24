@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class DFS {
 
-	public static void dfs(ArrayList<Integer> [] adj, int curr, int [] visited) {
+	public static int dfs(ArrayList<Integer> [] adj, int curr, int [] visited) {
 		
 		  visited[curr]=1;
 		  System.out.println(curr);
 		  
-		  
+		  int count=1;
 //		  for(int i=0; i<adj[curr].size();i++) {
 //			  
 //			   dfs(adj, adj[curr].get(i));
@@ -18,12 +18,12 @@ public class DFS {
 		  
 		  for( int nb :  adj[curr]) {
 			  
-			    if(visited[nb]==0) {
-			    	dfs(adj, nb, visited);
+			    if(visited[nb]==0){
+			    	count+=dfs(adj, nb, visited);
 			    }
 		  }
 		  
-		  
+		  return count;
 	}
 	// 5 0 3 1 5
 	public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class DFS {
 	    }
 	    Scanner s= new Scanner(System.in);
 	    
-	    for(int i=0; i<6;i++) {
+	    for(int i=0; i<6;i++){
 	    	
 	    	int u= s.nextInt();
 	    	int v= s.nextInt();
@@ -45,10 +45,12 @@ public class DFS {
 	    }
 	    int [] visited= new int[6];
 	     
+	    int count=0;
 	    for(int i=0; i<6;i++) {
 	    	
 	    	if(visited[i]==0) {
-	    		dfs(adj, i, visited);
+	    		count++;
+	    		System.out.println(dfs(adj, i, visited));
 	    	}
 	    }
 	    
